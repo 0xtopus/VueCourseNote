@@ -1,2 +1,2 @@
 # VueCourseNote
-Hi, nothing special, just my Vue Course's note here!
+Hi, nothing special, just recording my Vue Course's note here!
