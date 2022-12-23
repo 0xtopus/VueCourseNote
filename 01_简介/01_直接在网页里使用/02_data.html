@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.data</title>
+    <!-- 引入Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+        <script>
+            // 编写vue代码
+            // 创建一个根组件，在vue3中组件就是一个普通的js对象
+            // 组件用来创建组件实例，组件是组件实例的模板
+            // 组件 --> 组件生成组件实例 --> 虚拟DOM --> DOM（在页面中呈现）
+            const Root = {
+                data(){
+                    return {
+                        message:"这是data返回的信息！" //data返回的对象，其中的属性自动添加到组件实例里
+                    }
+                },  //data是一个函数，返回值是一个对象
+                template:"<h1>hahah，{{message}}</h1>"  //使用双大括号 {{}} 可以引入data返回的信息
+
+            }
+
+            //创建app实例
+            //const app = Vue.createApp(Root)
+    
+            //在实例里挂载
+            //app.mount("#app")
+
+            //简洁写法
+            Vue.createApp(Root).mount("#app")
+        </script>
+    </body>
+</html>
