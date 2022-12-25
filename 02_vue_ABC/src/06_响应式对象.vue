@@ -38,8 +38,7 @@ console.log(count,"count print test succeeds");
 //count = 10   //在js里，改变量只会影响到变量自己，无法对变量进行代理
 
 function add() {
-  count++
-  //count.value++
+  count.value++
 }
 
 </script>

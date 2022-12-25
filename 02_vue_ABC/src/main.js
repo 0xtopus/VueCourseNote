@@ -13,3 +13,6 @@ import App from './App.vue'
                 - 在App.vue里，data方法的this就是这个proxy对象
 */
 const vm = createApp(App).mount('#app')
+
+//暴露vm给window
+window.vm = vm
