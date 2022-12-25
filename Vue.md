@@ -44,3 +44,6 @@
 
    - `npm init vue@latest`
    - `yarn create vue`
+   - 之后要记得在创建的项目目录里`yarn`一下安装依赖。
+   - 
+
