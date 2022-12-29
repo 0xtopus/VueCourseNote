@@ -1,4 +1,4 @@
 node_modules
 yarn.lock
-03_template/readme.md
-app.vue
+0*/readme.md
+03_template/src/app.vue
