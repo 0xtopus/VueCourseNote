@@ -1,7 +1,25 @@
 <script setup>
-  import { ref } from "vue"
+  import { ref,reactive } from "vue"
+
+  //import component
+  import TabItem from "./components/TabItem.vue";
+  
   //记录选项卡的状态 
   const current = ref(0) // 0 表示球员 1表示球队
+
+  const player = reactive({
+        name: "梅西",
+        rate: 1,
+        img: "/images/messi.png",
+        hot: "433760热度"
+    })
+
+  const nation = reactive({
+    name: "法国",
+    rate: 1,
+    img: "/images/France.jpg",
+    hot: "433760热度"
+  })
 </script>
 
 <template>
@@ -40,44 +58,9 @@
         <!-- players container -->
         <div class="tab-list">
           <!-- single player container -->
-          <div class="tab-item">
-            <!--  portrait of player -->
-            <div class="photo">
-              <span>1</span>
-              <!-- !根路径注意! -->
-              <img src="/images/messi.png" alt="messi">
-            </div>  
+          <TabItem :item="player"></TabItem>
+          
 
-            <!-- description of player -->
-            <div class="desc">
-              <span class="name">梅西</span>
-              <div class="hot-bar">
-                <div class="inner">
-                  43760热度
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- single player container -->
-          <div class="tab-item">
-            <!--  portrait of player -->
-            <div class="photo">
-              <span>1</span>
-              <!-- !根路径注意! -->
-              <img src="/images/messi.png" alt="messi">
-            </div>  
-
-            <!-- description of player -->
-            <div class="desc">
-              <span class="name">梅西</span>
-              <div class="hot-bar">
-                <div class="inner">
-                  43760热度
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       
       </div>
@@ -85,25 +68,9 @@
       <div v-show="current===1">
         <!-- teams' container -->
         <div class="tab-list">
-          <!-- single team's container -->
-          <div class="tab-item">
-            <!--  national flag of the team -->
-            <div class="photo">
-              <span>1</span>
-              <!-- !根路径注意! -->
-              <img src="/images/France.jpg" alt="France">
-            </div>  
+          <!-- single flag's container -->
+          <TabItem :item="nation"></TabItem>
 
-            <!-- description of the team -->
-            <div class="desc">
-              <span class="name">热度</span>
-              <div class="hot-bar">
-                <div class="inner">
-                  222
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       
       </div>
