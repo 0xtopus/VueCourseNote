@@ -45,5 +45,53 @@
    - `npm init vue@latest`
    - `yarn create vue`
    - 之后要记得在创建的项目目录里`yarn`一下安装依赖。
-   - 
+
+
+
+## 模版
+
+````vue
+<script setup>
+
+const props = defineProps(["value"])
+
+</script>
+
+<template>
+  <h2>MyBox Header</h2>
+  <hr>
+  <span>{{ props.value }}</span>
+
+</template>
+
+<style scoped>
+ *{
+    color: #7b3
+ }
+</style>
+````
+
+
+
+1. v-bind
+2. v-show
+
+
+
+## props
+
+- 父组件可以通过props来向子组件传递数据
+
+  - 注意：父组件传递给子组件的props都是只读的，无法修改
+
+  - 即使可以修改，我们也尽量不要在子组件中去修改父组件的数据
+
+  - 如果非得要改，具体方法后边再讲（自定义事件）
+
+属性名
+
+- 定义属性名时，属性名要遵循驼峰命名法
+- 或者使用：`element-name` 这种形式
+
+ 
 

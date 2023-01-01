@@ -2,3 +2,4 @@ node_modules
 yarn.lock
 0*/readme.md
 03_template/src/app.vue
+.gitignore
