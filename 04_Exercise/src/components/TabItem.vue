@@ -1,6 +1,6 @@
 <script setup>
-    import { reactive } from 'vue';
-
+    import { reactive } from 'vue'; 
+    import Photo from "./Photo.vue";
     const props = defineProps(["item"])
 
     const item = props.item
@@ -11,11 +11,7 @@
   <!-- single item container -->
   <div class="tab-item">
     <!--  portrait -->
-    <div class="photo">
-      <span>{{ item.rate }}</span>
-      <!-- !根路径注意! -->
-      <img :src = item.img :alt = item.name />
-    </div>
+    <photo :src="item.img" :rate="item.rate" :alt="item.name"></photo>
 
     <!-- description -->
     <div class="desc">
@@ -32,30 +28,6 @@
     display:flex;
     position: relative;
     padding-bottom: 20px;
-  }
-
-  .photo span{
-    height: 50px;
-    width: 50px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgb(245,102,1);
-    box-sizing: border-box;
-    font-size: 30px;
-    text-align: center;
-    padding: 5px 0;
-    font-weight: bold;
-  }
-
-  .photo img{
-    width: 180px;
-    height: 180px;
-    background-color: #fff;
-    border-radius: 20px;
-    
   }
 
   .desc{

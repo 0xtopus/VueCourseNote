@@ -27,8 +27,8 @@
   <div class="tab-wrapper">
     <!-- header -->
     <header>
-        <!-- 使用: 
-                :class="{ className: judgement sentence }"
+        <!-- ! 使用: 
+             !   :class="{ className: judgement sentence }"
         -->
         <div 
           @click = "current = 0"
@@ -50,17 +50,15 @@
     <!-- main -->
     <main style="color:#fff; font-size:20px">
       <!-- 
-        v-show:
-          显示属性，
-          当不满足条件的时候相关模块变成 display: none
+        ! v-show:
+        !   显示属性，
+        !   当不满足条件的时候相关模块变成 display: none
        -->
       <div v-show="current===0">
         <!-- players container -->
         <div class="tab-list">
           <!-- single player container -->
           <TabItem :item="player"></TabItem>
-          
-
         </div>
       
       </div>
@@ -70,7 +68,6 @@
         <div class="tab-list">
           <!-- single flag's container -->
           <TabItem :item="nation"></TabItem>
-
         </div>
       
       </div>
