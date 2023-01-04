@@ -1,9 +1,12 @@
 <script setup>
     import { reactive } from 'vue'; 
     import Photo from "./Photo.vue";
-    const props = defineProps(["item"])
+    import HotBar from "./HotBar.vue";
+
+    const props = defineProps(["item","maxHot"])
 
     const item = props.item
+    
 
 </script>
 
@@ -16,9 +19,7 @@
     <!-- description -->
     <div class="desc">
       <span class="name">{{ item.name }}</span>
-      <div class="hot-bar">
-        <div class="inner">{{ item.hot }}</div>
-      </div>
+      <hot-bar :hot="item.hot" :maxHot="maxHot"></hot-bar>
     </div>
   </div>
 </template>
@@ -41,30 +42,7 @@
     
   }
 
-  .hot-bar{
-    overflow: hidden;
-    border-radius: 30px;
-    background-color: rgb(3,37,103);
-    /* <!-- !缩进半个字! --> */
-    text-indent: .5em;
-  }
-
-  .hot-bar .inner{
-    border-radius: 30px;
-    width: 30%;
-    /* <!-- !渐变! --> */
-    background-image: linear-gradient(
-      90deg,
-      rgb(187, 3, 52) 50%,
-      rgb(63,4,18)
-    );
-    /* <!-- !防止进度条太低时溢出! --> */
-    white-space: nowrap;
-  }
-
-  .desc .name,
-  .hot-bar .inner,
-  .photo span{
+  .desc .name{
     cursor: default
   }
 </style>

@@ -73,8 +73,9 @@ const props = defineProps(["value"])
 
 
 
-1. v-bind
-2. v-show
+1. v-bind	 (style绑定动态属性)
+2. v-show  （template展示）
+2. v-for       （template遍历复制元素）
 
 
 
@@ -95,3 +96,19 @@ const props = defineProps(["value"])
 
  
 
+## 网页的渲染
+
+- 浏览器在渲染网页时：
+  1. 加载页面html和css；
+  2. html转换为DOM，css转换为CSSOM
+  3. 将DOM和CSSOM构建成渲染树（render tree）
+  4. 对渲染树进行reflow（重排、回流）（计算元素的位置
+  5. 对网页进行repaint(重绘)
+- 渲染树 / render tree：
+  - 从根元素开始检查哪些元素可见，以及它们的样式
+  - 忽略不可见的元素，比如：display：none
+  - 但是display：hidden是会进入渲染树的；
+- reflow / 重排 / 回流
+  - 计算渲染树里元素的大小和位置
+- repaint / 重绘
+  - 绘制页面
