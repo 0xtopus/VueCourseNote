@@ -13,7 +13,7 @@
 
 1. 直接引入
 
-```javascript
+```vue
 //引入Vue
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -112,3 +112,90 @@ const props = defineProps(["value"])
   - 计算渲染树里元素的大小和位置
 - repaint / 重绘
   - 绘制页面
+
+## slot
+
+
+
+
+
+## 事件
+
+元素绑定事件：
+
+- 绑定事件用`v-on`指令：
+
+  ```vue
+  <button v-on:"事件名"> </button>
+  <button @"事件名"> </button>
+  ```
+
+- 绑定事件的两种方式
+
+  1.内联事件处理器
+
+  ​	（自己调用函数）
+
+  ```vue
+  <button @click = "function()">click me</button>
+  ```
+
+  ​	要我们自己传递参数，如果要使用事件对象的参数：`$event`:
+
+  ```vue
+  <button @click="function($event)"></button>
+  ```
+
+  
+
+  2.方法事件处理器
+
+  ​	（vue帮你调用）
+
+  ```vue
+  <button @click = "function">click me</button>
+  ```
+
+
+
+- 标识符：变量名、函数名...
+
+- vue如何区分两种处理器：
+
+  - 检查事件是否是合法的 js **标识符**或**属性访问路径**
+    - 是，则是方法
+    - 否，则是内联
+
+  ```vue
+  <!--
+  	方法：
+  		foo
+  		foo.bar
+  	内联：
+  		foo++
+  		foo()
+  -->
+  ```
+
+  
+
+  - 事件冒泡的取消
+
+    ```javascript
+    //传统方法
+    function(event){
+        event.stopPropagation()
+    }
+    //tip: 为了兼容IE，不定义event也会有一个window的event，但是直接用event不好
+    ```
+
+    vue的方法：
+
+    ```vue
+    <!-- 使用修饰符 .stop 来停止向上冒泡 -->
+    <div @click.stop="function()">
+        ...
+    </div>
+    ```
+
+    
